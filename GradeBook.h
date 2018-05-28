@@ -12,6 +12,14 @@ public:
 		:courseName(name), grades{ gradesArray } {
 	}
 
+	void setCourseName(const std::string& name) {
+		courseName = name;
+	}
+
+	const std::string& getCourseName() const {
+		return courseName;
+	}
+
 private:
 	std::string courseName;
 	std::array<int, students>grades;
