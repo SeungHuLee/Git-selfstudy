@@ -94,6 +94,15 @@ public:
 			std::cout << std::endl;
 		}
 	}
+
+	void outputGrades() const {
+		std::cout << "\nThe grades are:\n\n";
+
+		for (size_t student{ 0 }; student < grades.size(); ++student) {
+			std::cout << "Student " << std::setw(2) << student + 1 << ": " << std::setw(3) << grades[student] << std::endl;
+		}
+	}
+
 private:
 	std::string courseName;
 	std::array<int, students>grades;
