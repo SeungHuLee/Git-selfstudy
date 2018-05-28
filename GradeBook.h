@@ -67,6 +67,33 @@ public:
 		return static_cast<double>(total) / grades.size();
 	}
 	
+	void outputBarChart() const {
+		std::cout << "\nGrade distribution: " << std::endl;
+
+		const size_t frequencySize{ 11 };
+		std::array<unsigned int, frequencySize> frequency{};
+
+		for (int grade : grades) {
+			++frequency[grade / 10];
+		}
+
+		for (size_t count{ 0 }; count < frequencySize; ++count) {
+			if (0 == count) {
+				std::cout << "  0-9: ";
+			}
+			else if (10 == count) {
+				std::cout << "  100: ";
+			}
+			else {
+				std::cout << count * 10 << "-" << (count * 10) + 9 << ": ";
+			}
+
+			for (unsigned int stars{ 0 }; stars < frequency[count]; stars++) {
+				std::cout << "*";
+			}
+			std::cout << std::endl;
+		}
+	}
 private:
 	std::string courseName;
 	std::array<int, students>grades;
