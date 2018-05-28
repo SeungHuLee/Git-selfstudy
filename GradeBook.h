@@ -20,6 +20,10 @@ public:
 		return courseName;
 	}
 
+	void displayMessage() const {
+		std::cout << "Welcome to the grade book for\n" << getCourseName() << "!" << std::endl;
+	}
+
 private:
 	std::string courseName;
 	std::array<int, students>grades;
